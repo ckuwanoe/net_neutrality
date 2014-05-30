@@ -12,5 +12,9 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
-//= require_tree .
+//= require jquery.autosize
+//= require jquery.isotope.min
+//= require lightbox-2.6.min
+//= require jquery.bxslider
+//= require jquery.validate
+//= require init

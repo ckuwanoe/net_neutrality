@@ -1,0 +1,227 @@
+!!!
+/[if lt IE 7] <html class="no-js ie6 oldie" lang=""en" xml:lang="en"">
+/[if IE 7] <html class="no-js ie7 oldie" lang=""en" xml:lang="en"">
+/[if IE 8] <html class="no-js ie8 oldie" lang=""en" xml:lang="en"">
+/[if IE 9] <html class="no-js ie9 oldie" lang=""en" xml:lang="en"">
+/[if gt IE 8] <html class="no-js newie" lang='"en" xml:lang="en"'>
+%html
+  %head
+    %meta{charset: "utf-8"}
+    %title
+    %meta{content: "", name: "description"}
+    %meta{content: "Politech", name: "author"}
+    %meta{content: "width=device-width", name: "viewport"}
+    = stylesheet_link_tag    'application', media: 'all'
+    = javascript_include_tag :modernizr
+    / <link rel="icon" type="image/png" href="favicon.png" />
+    %link{href: "http://fonts.googleapis.com/css?family=Roboto:300,700", rel: "stylesheet", type: "text/css"}/
+    / Internet Explorer 8 or older doesn't support media query. This script helps ie7 and ie8 to recognize media queries
+    /[if lt IE 9]
+      <script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+  %body#top
+    .layout
+      %header
+        .container
+          / logo
+          %a.logo{href: "#top"}
+            Logo
+          %nav
+            %ul
+              %li
+                %a{href: "#contact"} Contact FCC            
+              %li
+                %a{href: "#about"} About
+
+
+      .content
+        .subheader
+          .container
+            %h1 Save Net Neutrality
+            %span
+              %h4 before it's too late
+            .clearfix
+            %a.btn{href: "#contact"} ACT NOW
+            %a.down{href: "#about"}
+        / Begin of  #form
+        %section#contact
+          .container
+            %h2 Get Involved
+            %p Send your thoughts to the FCC
+            %form.contact-form{action: "/", method: "post", novalidate: ""}
+              .left
+                %input#name.form-name{name: "name", placeholder: "Name", type: "text"}/
+                %input#email.form-email{name: "email", placeholder: "Email", type: "email"}/
+                %input#phone.form-phone{name: "phone", placeholder: "Phone", type: "text"}/
+              .left.right
+                %textarea#message.form-message{name: "message", placeholder: "Message"}
+                %button.btn.lightgreen Send Message            
+        / Section About        
+        %section#about
+          .container
+            %h2 About
+            %p
+              .question
+                What is Net Neutrality?
+            %p
+              Aenean lacinia bibendum nulla sed consectetur. Maecenas faucibus mollis interdum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur blandit tempus porttitor.
+            %p
+              .question
+                How can I help?
+            %p
+              Donec sed odio dui. Cras mattis consectetur purus sit amet fermentum. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Donec sed odio dui. Nullam quis risus eget urna mollis ornare vel eu leo.
+
+              Vestibulum id ligula porta felis euismod semper. Maecenas sed diam eget risus varius blandit sit amet non magna. Nullam quis risus eget urna mollis ornare vel eu leo. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Nullam id dolor id nibh ultricies vehicula ut id elit. Nullam id dolor id nibh ultricies vehicula ut id elit. Nullam quis risus eget urna mollis ornare vel eu leo.
+
+
+            /
+              %ul
+                %li
+                  %span.icons-img1
+                  %h6 Web Development
+                  %p Some of our services include web design, markup, coding, web server configuration and many more.
+                %li
+                  %span.icons-img2
+                  %h6 App Development
+                  %p Whichever handheld device you have, we’ll provide you with the right app for it. Let us know what you need!
+                %li
+                  %span.icons-img3
+                  %h6 Branding
+                  %p Our top-notch branding experts will make your product or service leave an impact on the client.
+                %li
+                  %span.icons-img4
+                  %h6 Printing
+                  %p We offer our clients only high quality printing, such as digital printing, litho printing, banner/flyer printing, etc.
+        / Begin of #clients
+        /        
+          %section#clients
+            .container
+              %h2 Our Clients
+              %p This is Photoshop's version Proin gravida nibh vel velit auctor aliquet.
+              .slider1
+                .slide
+                  %a{href: "#"}
+                    %img{alt: "", src: image_url("clients/24security.png")}
+                .slide
+                  %a{href: "#"}
+                    %img{alt: "", src: image_url("clients/quick.png")}
+                .slide
+                  %a{href: "#"}
+                    %img{alt: "", src: image_url("clients/themes.png")}
+                .slide
+                  %a{href: "#"}
+                    %img{alt: "", src: image_url("clients/24security.png")}
+                .slide
+                  %a{href: "#"}
+                    %img{alt: "", src: image_url("clients/wave.png")}
+                .slide
+                  %a{href: "#"}
+                    %img{alt: "", src: image_url("clients/wda.png")}
+        / Begin of #team
+        /
+          %section#team
+            .container
+              %h2 Team, Team, Team!
+              %p This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor. Sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum.
+              .slider2
+                .slide
+                  %a.no1
+                    %img{alt: "", src: "http://placehold.it/204x204"}
+                    %i
+                  %h5 Monica Tadder
+                  %p Director
+                  .arrow_up.no1
+                .slide
+                  %a.no2
+                    %img{alt: "", src: "http://placehold.it/204x204"}
+                    %i
+                  %h5 François Martin
+                  %p Lead Developer
+                  .arrow_up.no2
+                .slide
+                  %a.no3
+                    %img{alt: "", src: "http://placehold.it/204x204"}
+                    %i
+                  %h5 Fernando Vicente
+                  %p Web Developer
+                  .arrow_up.no3
+                .slide
+                  %a.no4
+                    %img{alt: "", src: "http://placehold.it/204x204"}
+                    %i
+                  %h5 Monica Tadder
+                  %p Director
+                  .arrow_up.no4
+                .slide
+                  %a.no5
+                    %img{alt: "", src: "http://placehold.it/204x204"}
+                    %i
+                  %h5 François Martin
+                  %p Lead Developer
+                  .arrow_up.no5
+                .slide
+                  %a.no6
+                    %img{alt: "", src: "http://placehold.it/204x204"}
+                    %i
+                  %h5 Fernando Vicente
+                  %p Web Developer
+                  .arrow_up.no6
+              .slider2_popups
+                .popup-item.no1
+                  %h6 Some facts about Monica
+                  %p This is Photoshop's version  o f Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum.
+                  %b.close Close
+                .popup-item.no2
+                  %h6 Some facts about François
+                  %p This is Photoshop's version  o f Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum.
+                  %b.close Close
+                .popup-item.no3
+                  %h6 Some facts about Fernando
+                  %p This is Photoshop's version  o f Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum.
+                  %b.close Close
+                .popup-item.no4
+                  %h6 Some facts about Monica
+                  %p This is Photoshop's version  o f Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum.
+                  %b.close Close
+                .popup-item.no5
+                  %h6 Some facts about François
+                  %p This is Photoshop's version  o f Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum.
+                  %b.close Close
+                .popup-item.no6
+                  %h6 Some facts about Fernando
+                  %p This is Photoshop's version  o f Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum.
+                %b.close Close
+
+      #to_the_top
+    / Footer Section
+    %footer
+      .container
+        .left
+          %a{href: "#top"}
+           
+          %small
+            © 2013.
+            %i All rights reserved.
+        %ul.right
+          %li
+            %a.social-fb{href: ""}
+          /
+          %li
+            %a.social-tw{href: ""}
+          /
+          %li
+            %a.social-google{href: ""}
+          /
+          %li
+            %a.social-bb{href: ""}    
+    
+    
+    = javascript_include_tag 'application'
+
+    /
+      Make visible media queries to IE7 , IE8
+      (visible only on server or localhost)
+    /[IF IE]
+      <script src="js/selectivizr-min.js"></script>
+      
+      <link href="http://externalcdn.com/respond-proxy.html" id="respond-proxy" rel="respond-proxy" />
+      <script src="js/respond.src.js"></script>
