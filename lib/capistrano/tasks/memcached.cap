@@ -1,0 +1,12 @@
+namespace :cache do
+  desc "Clear memcached after deployment"
+  task :clear do
+    on roles(:app) do
+      within release_path do
+        with rails_env: fetch(:rails_env) do
+          execute :bundle, :exec, :'bin/rake', args, "cache:clear"
+        end        
+      end
+    end
+  end
+end
