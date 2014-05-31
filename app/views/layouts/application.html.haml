@@ -42,7 +42,7 @@
               %h4 before it's too late
             .clearfix
             %a.btn{href: "#contact"} ACT NOW
-            %a.down{href: "#about"}
+            %a.down{href: "#contact"}
         / Begin of  #form
         %section#contact
           .container
@@ -52,7 +52,8 @@
               .left
                 %input#name.form-name{name: "name", placeholder: "Name", type: "text"}/
                 %input#email.form-email{name: "email", placeholder: "Email", type: "email"}/
-                %input#phone.form-phone{name: "phone", placeholder: "Phone", type: "text"}/
+                %input#address.form-address{name: "address", placeholder: "Street Address", type: "text"}/
+                %input#zip.form-zip{name: "zip", placeholder: "Zip Code", type: "text"}/
               .left.right
                 %textarea#message.form-message{name: "message", placeholder: "Message"}
                 %button.btn.lightgreen Send Message            

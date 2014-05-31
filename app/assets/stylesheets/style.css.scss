@@ -118,10 +118,11 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   background-position: 0 -212px;
 }
 
-/* SPRITES contact form */
+/* SPRITES contact form 
 .form-sprite, .form-email, .form-error, .form-message, .form-name, .form-phone {
   background: image-url('form-s13b8ee05b4.png') no-repeat;
 }
+*/
 
 .form-email {
   background-position: 0 0;
@@ -432,7 +433,7 @@ input[type="text"], input[type="email"], textarea {
   border: 2px solid #d4d8de;
   color: #67727e;
   background-color: white;
-  padding: 0 10px 0 65px;
+  padding: 0 10px 0 15px;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   -ms-border-radius: 5px;
@@ -472,7 +473,7 @@ input[type="text"], input[type="email"] {
 textarea {
   resize: none;
   padding-top: 12px;
-  min-height: 203px;
+  min-height: 283px;
 }
 textarea.form-message {
   width: 100%;
