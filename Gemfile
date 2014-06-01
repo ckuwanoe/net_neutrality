@@ -27,6 +27,7 @@ gem 'spring',        group: :development
 gem 'nokogiri'
 gem 'mechanize'
 gem 'geocoder'
+gem 'shareable'
 
 gem 'resque'
 gem 'resque-web', github: 'resque/resque-web' , require: 'resque_web'
