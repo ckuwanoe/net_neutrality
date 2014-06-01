@@ -34,7 +34,13 @@
                 %a{href: "#about"} About
 
 
-      .content
+      .content        
+        - flash.each do |key,msg|
+          .flash.popup-item.active-popup
+            %p
+              = msg
+            %b.close
+              Close
         .subheader
           .container
             %h1 Save Net Neutrality

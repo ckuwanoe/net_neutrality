@@ -726,6 +726,60 @@ footer li a:hover {
   background-position: 0 -60px;
 }
 
+.flash.popup-item {
+  position: absolute;
+  top: 10px;
+  left: 39%;
+  visibility: hidden;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+  opacity: 0;
+  width: 280px;
+  margin-left: -140px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  border-radius: 5px;
+  background-color: #ff5f59;
+  z-index: 15000;
+  padding: 20px;
+  text-align: center;
+  -webkit-transition: all 0.4s ease;
+  -moz-transition: all 0.4s ease;
+  -ms-transition: all 0.4s ease;
+  -o-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  zoom: 1;
+}
+.flash.popup-item.active-popup {
+  visibility: visible;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+  opacity: 1;
+}
+.flash.popup-item * {
+  color: #fff;
+}
+.flash.popup-item h6 {
+  font-weight: 700;
+  font-size: 16px;
+  padding-bottom: 15px;
+}
+.flash.popup-item p {
+  padding: 15px 0;
+  border-top: 1px solid #fff;
+  border-bottom: 1px solid #fff;
+  margin-bottom: 20px;
+}
+.flash.popup-item b {
+  display: inline-block;
+  cursor: pointer;
+  padding-left: 15px;
+  background: image-url('close.png') no-repeat 0 50%;
+}
+
 @-moz-keyframes bounce {
   0% {
     -moz-transform: translateY(0);
