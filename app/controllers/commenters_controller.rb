@@ -4,9 +4,10 @@ class CommentersController < ApplicationController
     @commenter = Commenter.new(commenter_params)
 
     if @commenter.save
-      redirect_to root_url
+      Resque.enqueue(PostToFccJob, @commenter.id)
+      redirect_to root_url, flash: { success: "Thank you for submitting your comments."}
     else
-      redirect_to root_url
+      redirect_to root_url, error: "There was an error submitting your comment."
     end
   end
 

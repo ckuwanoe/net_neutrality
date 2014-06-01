@@ -28,6 +28,9 @@ gem 'nokogiri'
 gem 'mechanize'
 gem 'geocoder'
 
+gem 'resque'
+gem 'resque-web', github: 'resque/resque-web' , require: 'resque_web'
+
 # Deploy with Capistrano
 gem 'capistrano'
 gem 'capistrano-exts', '>=1.8.1', :require => false
