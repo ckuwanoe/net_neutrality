@@ -8,94 +8,6 @@ $(document).ready(function() {
         $(this).addClass('active');
     });
 
-
-
-
-
-    //functions for centering elements in isotope
-    $.Isotope.prototype._getCenteredMasonryColumns = function() {
-        this.width = this.element.width();
-
-        var parentWidth = this.element.parent().width();
-
-        // i.e. options.masonry && options.masonry.columnWidth
-        var colW = this.options.masonry && this.options.masonry.columnWidth ||
-        // or use the size of the first item
-        this.$filteredAtoms.outerWidth(true) ||
-        // if there's no items, use size of container
-        parentWidth;
-
-        var cols = Math.floor(parentWidth / colW);
-        cols = Math.max(cols, 1);
-
-        // i.e. this.masonry.cols = ....
-        this.masonry.cols = cols;
-        // i.e. this.masonry.columnWidth = ...
-        this.masonry.columnWidth = colW;
-    };
-
-    $.Isotope.prototype._masonryReset = function() {
-        // layout-specific props
-        this.masonry = {};
-        // FIXME shouldn't have to call this again
-        this._getCenteredMasonryColumns();
-        var i = this.masonry.cols;
-        this.masonry.colYs = [];
-        while (i--) {
-            this.masonry.colYs.push(0);
-        }
-    };
-
-    $.Isotope.prototype._masonryResizeChanged = function() {
-        var prevColCount = this.masonry.cols;
-        // get updated colCount
-        this._getCenteredMasonryColumns();
-        return (this.masonry.cols !== prevColCount);
-    };
-
-    $.Isotope.prototype._masonryGetContainerSize = function() {
-        var unusedCols = 0,
-            i = this.masonry.cols;
-        // count unused columns
-        while (--i) {
-            if (this.masonry.colYs[i] !== 0) {
-                break;
-            }
-            unusedCols++;
-        }
-
-        return {
-            height: Math.max.apply(Math, this.masonry.colYs),
-            // fit container to columns that have been used;
-            width: (this.masonry.cols - unusedCols) * this.masonry.columnWidth
-        };
-    };
-
-
-    //script for isotope filtering
-    $('#filter_content').isotope({
-
-    });
-
-    // cache filter_content
-    var $filter_content = $('#filter_content');
-    // initialize isotope
-    $filter_content.isotope({
-        animationOptions: {
-            duration: 750,
-            queue: false
-        }
-    });
-    // filter items when filter link is clicked
-    $('#filters a').click(function() {
-        var selector = $(this).attr('data-filter');
-        $filter_content.isotope({
-            filter: selector
-        });
-        return false;
-    });
-
-
     //start slider depending of resolution
     var width_page = $(document).width();
 
@@ -287,37 +199,43 @@ $(document).ready(function() {
     //validate contact form
     $("form.contact-form").validate({
         rules: {
-            name: {
+            "commenter[name]": {
                 required: true,
                 minlength: 2
             },
-            message: {
+            "commenter[message]": {
                 required: true,
                 minlength: 2
             },
-            comments: {
-                required: true,
-                minlength: 2
-            },
-            email: {
+            "commenter[email]": {
                 required: true,
                 email: true
             },
-            phone: {
-                required: false,
-                number: true
+            "commenter[address_line_1]": {
+                required: true
+            },
+            "commenter[zip]": {
+                required: true
             }
         },
         messages: {
-            name: {
+            "commenter[name]": {
                 required: "This field is required",
                 minlength: jQuery.format("At least {0} characters required")
             },
-            comments: {
+            "commenter[address_line_1]": {
                 required: "This field is required",
                 minlength: jQuery.format("At least {0} characters required")
             },
-            email: {
+            "commenter[zip]": {
+                required: "This field is required",
+                minlength: jQuery.format("At least {0} characters required")
+            },
+            "commenter[message]": {
+                required: "This field is required",
+                minlength: jQuery.format("At least {0} characters required")
+            },
+            "commenter[email]": {
                 required: "This field is required",
                 email: "Wrong e-mail address"
             }

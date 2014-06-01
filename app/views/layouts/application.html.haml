@@ -48,14 +48,14 @@
           .container
             %h2 Get Involved
             %p Send your thoughts to the FCC
-            %form.contact-form{action: "/", method: "post", novalidate: ""}
+            = form_for(Commenter.new, url: comment_path, html: {class: 'contact-form'}) do |f|
               .left
-                %input#name.form-name{name: "name", placeholder: "Name", type: "text"}/
-                %input#email.form-email{name: "email", placeholder: "Email", type: "email"}/
-                %input#address.form-address{name: "address", placeholder: "Street Address", type: "text"}/
-                %input#zip.form-zip{name: "zip", placeholder: "Zip Code", type: "text"}/
+                = f.text_field :name, class: 'form-name', placeholder: "Name"
+                = f.text_field :email, class: 'form-email', placeholder: "Email"
+                = f.text_field :address_line_1, class: 'form-address', placeholder: "Street Address"
+                = f.text_field :zip, class: 'form-zip', placeholder: "Zip Code"
               .left.right
-                %textarea#message.form-message{name: "message", placeholder: "Message"}
+                = f.text_area :comment, class: 'form-message', placeholder: "Message"
                 %button.btn.lightgreen Send Message            
         / Section About        
         %section#about

@@ -454,7 +454,7 @@ input[type="text"]:hover, input[type="text"]:focus, input[type="email"]:hover, i
   border: 2px solid #1ed2d0;
 }
 input[type="text"].error, input[type="email"].error, textarea.error {
-  background: image-url('form/error.png') no-repeat 0 0;
+  /*background: image-url('form/error.png') no-repeat 0 0;*/
   border: 2px solid #ff605a;
   color: #ff605a;
 }
